@@ -1,0 +1,10 @@
+.message {
+  font-family: 'Georgia', sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 40px;
+  font-weight: 400;
+  padding-top: 90px;
+  width: 550px;
+  margin: auto;
+  text-align: start;
+}
