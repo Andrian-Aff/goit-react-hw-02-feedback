@@ -32,21 +32,15 @@ class App extends Component {
 
   render() {
     const { good, bad, neutral } = this.state;
-    const isVisible = Object.values(this.state).reduce(
-      (acc, el) => (el ? acc + 1 : acc),
-      0,
-    )
-      ? true
-      : false;
 
     return (
-      <Section title={'Please leave feedback'}>
+      <Section title="Please leave feedback">
         <FeedbackOptions
           options={Object.keys(this.state)}
           onLeaveFeedback={this.addFeedback}
         />
 
-        {isVisible ? (
+        {this.countTotalFeedback() ? (
           <Statistics
             good={good}
             neutral={neutral}
@@ -55,7 +49,7 @@ class App extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         ) : (
-          <Notification message={'No feedback given'} />
+          <Notification message="No feedback given" />
         )}
       </Section>
     );

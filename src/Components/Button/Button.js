@@ -3,11 +3,7 @@ import s from './Button.module.css';
 
 export default function Button({ textBtn, onLeaveFeedback }) {
   return (
-    <button
-      className={`${s.button}`}
-      type="button"
-      onClick={event => onLeaveFeedback(event)}
-    >
+    <button className={`${s.button}`} type="button" onClick={onLeaveFeedback}>
       {textBtn}
     </button>
   );
