@@ -5,11 +5,11 @@ import s from './FeedbackOptions.module.css';
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <div className={s.buttonsBox}>
-      {options.map(textBtn => (
+      {options.map(option => (
         <Button
-          key={textBtn}
-          textBtn={textBtn}
-          onLeaveFeedback={onLeaveFeedback}
+          key={option}
+          labelBtn={option}
+          onLeaveFeedback={() => onLeaveFeedback(option)}
         />
       ))}
     </div>

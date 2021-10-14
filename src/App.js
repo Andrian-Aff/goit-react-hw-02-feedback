@@ -11,11 +11,10 @@ class App extends Component {
     bad: 0,
   };
 
-  addFeedback = e => {
-    const value = e.target.textContent.toLowerCase();
-    this.setState(prevState => ({
-      [value]: prevState[value] + 1,
-    }));
+  addFeedback = value => {
+    this.setState(prevState => {
+      return { [value]: prevState[value] + 1 };
+    });
   };
 
   countTotalFeedback() {
